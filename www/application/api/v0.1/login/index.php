@@ -10,6 +10,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 // class imports
 include_once '../../../objects/database.php';
 include_once '../../../objects/user.php';
+include_once '../../../config/core.php';
 
 // instantiate user object
 $user = new User($db);
