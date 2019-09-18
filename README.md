@@ -4,6 +4,9 @@ API wrapper for R to allow JSON data exchange written in PHP.
 
 ## Dev
 
+http://localhost/api.application/v0.1/
+
+
 ### Web Server
 
 Start local webserver
