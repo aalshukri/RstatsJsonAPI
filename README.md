@@ -29,5 +29,7 @@ PhpMyAdmin
 
 User: root, password: docker
 
+db: db_runwaytest
+
 http://localhost:8080/index.php
 
