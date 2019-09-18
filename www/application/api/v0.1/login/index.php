@@ -27,7 +27,21 @@ $user = new User();
 $data = json_decode(file_get_contents("php://input"));
  
 // set product property values
-$user->email = $data->email;
+if(isset($data->email))
+{
+	$user->email = $data->email;
+}
+else
+{
+	// set response code
+	http_response_code(401);
+
+	// tell the user login failed
+	echo json_encode(array("message" => "email not supplied."));
+
+	exit();
+}
+
 
 // check if user email exists
 $userEmailExists = $user->emailExists();
