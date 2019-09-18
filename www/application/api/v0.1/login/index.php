@@ -12,8 +12,15 @@ include_once '../../../objects/database.php';
 include_once '../../../objects/user.php';
 include_once '../../../config/core.php';
 
+// JWT lib
+include_once '../../../libs/php-jwt-master/src/BeforeValidException.php';
+include_once '../../../libs/php-jwt-master/src/ExpiredException.php';
+include_once '../../../libs/php-jwt-master/src/SignatureInvalidException.php';
+include_once '../../../libs/php-jwt-master/src/JWT.php';
+use \Firebase\JWT\JWT;
+
 // instantiate user object
-$user = new User($db);
+$user = new User();
 
 // Get posted data
 //   example { "email" : "test@test.com", "password" : "555" }
@@ -27,14 +34,31 @@ $userEmailExists = $user->emailExists();
 
 if( $userEmailExists )
 {
+
+	$token = array(
+		"iss" => $iss,
+		"aud" => $aud,
+		"iat" => $iat,
+		"nbf" => $nbf,
+		"data" => array(
+		   "id" => $user->id,
+			   "firstname" => $user->firstname,
+			   "lastname" => $user->lastname,
+			   "email" => $user->email
+		)
+	);
+ 
+
+
 	// set response code
 	http_response_code(200);
 
 	// generate jwt
+	$jwt = JWT::encode($token, $key);
 	echo json_encode(
 	    array(
 		"message" => "Successful login.",
-		"jwt" => "ExAmPlEJwTrEsPoNcEcOdE"
+		"jwt" => $jwt
 	    )
 	);
 }
