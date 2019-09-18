@@ -54,6 +54,32 @@ http://localhost:8080/index.php
 
 ## Example
 
+Send a request to login to get JWT token for user (using email)
+
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"email":"xyz","password":"xyz"}' \
+  http://localhost/application/api/v0.1/login/
+
+This will either return 
+ 1. The JWT token for the user or
+ 2. an error message if user not exists or
+ 3. an message saying the email was not supplied.
+
+
+The JWT token for the user
+
+{"message":"Successful login.","jwt":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9leGFtcGxlLm9yZyIsImF1ZCI6Imh0dHA6XC9cL2V4YW1wbGUuY29tIiwiaWF0IjoxMzU2OTk5NTI0LCJuYmYiOjEzNTcwMDAwMDAsImRhdGEiOnsiaWQiOm51bGwsImZpcnN0bmFtZSI6bnVsbCwibGFzdG5hbWUiOm51bGwsImVtYWlsIjoieHl6In19.nLxjkzdASI4dmpQAXY27o-piFQBBrHTbOd9rHHJ1ez8"}
+
+Error message if user not exists
+
+{"message":"Login failed."}
+
+Message saying the email was not supplied.
+
+{"message":"email not supplied."}
+
+
 http://localhost/application/api/v0.1/login
 
 
