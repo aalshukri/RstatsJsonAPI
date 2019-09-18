@@ -2,6 +2,23 @@
 API wrapper for R to allow JSON data exchange written in PHP.
 
 
+## File Structure
+
+|- application/
+|------------- api/ 			Main folder for public accessable api endpoints.
+|---------------------- v0.1/		Can use folder for versions and updates.
+|--------------------------- index.php 
+|--------------------------- login.php
+|------------- libs/			Supporting libaries for API functionality
+|---------------------- jwt/		JWT library for token and authentication.
+|------------- objects/			classes to support main functionality of the API.
+|--------------------------- User.php 
+|--------------------------- login.php
+|------------- config/			classes to support main functionality of the API.
+|--------------------- core.php 	Common settings and variables.
+|--------------------- database.php	Setting for connecting to the database.
+
+
 ## Dev
 
 http://localhost/api.application/v0.1/
