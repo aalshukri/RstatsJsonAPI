@@ -22,6 +22,11 @@ $data = json_decode(file_get_contents("php://input"));
 $user->email = $data->email;
 
 // check if user email exists
-// if( userExists() ) 
+$userEmailExists = $user->emailExists();
+
+if( $userEmailExists )
+{}
+else
+{}
 
 

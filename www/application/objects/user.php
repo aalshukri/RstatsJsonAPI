@@ -17,4 +17,7 @@ class User{
 	public function __construct()
 	{}
  
+	// emailExists
+	public function emailExists()
+	{return True;}
 }
