@@ -96,5 +96,8 @@ curl --header "Content-Type: application/json" \
 
 Response
 
+{"message":"Access granted.","data":{"id":null,"firstname":null,"lastname":null,"email":"xyz"},"z":200}
+
+The API will return the product of x y and return z.
 
 

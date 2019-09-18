@@ -20,8 +20,8 @@ use \Firebase\JWT\JWT;
 $data = json_decode(file_get_contents("php://input"));
  
 // get jwt
-echo "JWT";
-print_r($data);
+//echo "JWT";
+//print_r($data);
 
 $jwt=isset($data->jwt) ? $data->jwt : "";
 
@@ -34,7 +34,10 @@ if($jwt){
 	// decode jwt
 	$decoded = JWT::decode($jwt, $key, array('HS256'));
  
-
+	//Product x y calculation
+	$x = $data->x;
+	$y = $data->y;
+	$z = $x * $y;
 
 	// set response code
 	http_response_code(200);
@@ -42,7 +45,8 @@ if($jwt){
 	// show user details
 	echo json_encode(array(
 	    "message" => "Access granted.",
-	    "data" => $decoded->data
+	    "data" => $decoded->data,
+	    "z" => $z
 	));
  
     }
