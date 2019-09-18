@@ -20,12 +20,9 @@ API wrapper for R to allow JSON data exchange written in PHP.
 |  +-- database.php	Setting for connecting to the database.
 ```
 
-## Dev
+## Docker Dev Environment
 
-http://localhost/api.application/v0.1/
-
-
-### Web Server
+#### Web Server
 
 Start local webserver
 
@@ -44,7 +41,7 @@ To stop web server
 > docker-compose stop
 
 
-### Database 
+#### Database 
 
 PhpMyAdmin
 
@@ -53,4 +50,11 @@ User: root, password: docker
 db: db_runwaytest
 
 http://localhost:8080/index.php
+
+
+## Example
+
+http://localhost/application/api/v0.1/login
+
+
 
