@@ -16,6 +16,8 @@ include_once '../../../libs/php-jwt-master/src/SignatureInvalidException.php';
 include_once '../../../libs/php-jwt-master/src/JWT.php';
 use \Firebase\JWT\JWT;
  
+include_once '../../../objects/productxy.php';
+
 // get posted data
 $data = json_decode(file_get_contents("php://input"));
  
@@ -37,7 +39,10 @@ if($jwt){
 	//Product x y calculation
 	$x = $data->x;
 	$y = $data->y;
-	$z = $x * $y;
+
+	$prodXY = new ProductXY();
+	$z = $prodXY->product($x,$y);
+	
 
 	// set response code
 	http_response_code(200);

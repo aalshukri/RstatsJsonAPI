@@ -11,6 +11,8 @@ class ProductXY{
 	{}
  
 	// emailExists
-	public function product()
-	{}
+	public function product($x,$y)
+	{
+		return $z = $x * $y;
+	}
 } 
