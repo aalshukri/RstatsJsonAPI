@@ -10,7 +10,7 @@ class ProductXY{
 	public function __construct()
 	{}
  
-	// emailExists
+	// product x y 
 	public function product($x,$y)
 	{
 		$cmd = "Rscript ".dirname(__FILE__)."/".$this->rScript." $x $y";
