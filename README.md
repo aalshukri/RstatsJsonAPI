@@ -52,6 +52,11 @@ db: db_runwaytest
 http://localhost:8080/index.php
 
 
+#### Connect to container
+
+docker exec -it dev_webserver_1 /bin/bash
+
+
 ## Example
 
 1.   http://localhost/application/api/v0.1/login

@@ -10,7 +10,8 @@ RUN docker-php-ext-install mysqli
 
 RUN docker-php-ext-install pdo pdo_mysql gd curl
 
-
+#Install R
+RUN apt-get update -y && apt-get install -y r-base
 
 
 RUN a2enmod rewrite
