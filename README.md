@@ -1,6 +1,30 @@
 # RstatsJsonAPI
 API wrapper for R to allow JSON data exchange written in PHP using JWT.
 
+## Overview
+
+Hi
+
+I have created a beta version of the PHP API wrapper for R. I have created a productxy application for this particular test case.
+
+The r script, which is the most interesting part of this API, 
+runs as a standard r script does. The input variables are simply passed via the command line,
+which is invoked by the PHP script. 
+
+The r script for productxy application can be seen here
+https://github.com/aalshukri/RstatsJsonAPI/blob/master/www/application/objects/productxy.r
+Input params x and y are simply parsed from input arguments.
+
+
+In order to access the API, you first need a valid email address and password, 
+which can be checked against a db (in this test version, we simply return true, with no db checks).
+The email and password request is sent to http://localhost/application/api/v0.1/login (see below for details) and returns a token.
+
+This token can then be used to access the service provided by the API. In this case, productxy.
+The token, along with variables x and y, is send to http://localhost/application/api/v0.1/productxy
+a value for z is retuned, which is calculated x*y.
+
+
 
 ## File Structure
 
@@ -62,6 +86,7 @@ docker exec -it dev_webserver_1 /bin/bash
 1.   http://localhost/application/api/v0.1/login
 2.   http://localhost/application/api/v0.1/productxy
 
+### Login
 
 Send a request to login to get JWT token for user (using email)
 
@@ -89,6 +114,7 @@ Message saying the email was not supplied.
 {"message":"email not supplied."}
 
 
+### Productxy
 
 http://localhost/application/api/v0.1/productxy
 
