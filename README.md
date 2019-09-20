@@ -3,8 +3,6 @@ API wrapper for R to allow JSON data exchange written in PHP using JWT.
 
 ## Overview
 
-Hi
-
 I have created a beta version of the PHP API wrapper for R. I have created a productxy application for this particular test case.
 
 The r script, which is the most interesting part of this API, 
