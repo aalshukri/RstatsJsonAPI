@@ -91,6 +91,10 @@ curl --header "Content-Type: application/json" \
   --data '{"email":"xyz","password":"xyz"}' \
   http://localhost/application/api/v0.1/login/
 
+Note: If used in production environment, 'email' and 'password' 
+should change to 'CLIENT_ID' and 'CLIENT_SECRET'.
+Email and password are used here for easy of explanation only.
+
 This will either return 
  1. The JWT token for the user or
  2. an error message if user not exists or
