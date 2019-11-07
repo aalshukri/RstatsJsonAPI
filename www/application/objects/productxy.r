@@ -2,6 +2,7 @@
 #
 # Product X Y
 #
+
 args = commandArgs(trailingOnly=TRUE)
 
 x <- as.numeric(args[1])
